@@ -35,7 +35,7 @@ body::before {
 }
 
 #content-wrap {
-    padding-bottom: 93px;    /* altezza del footer */
+    padding-bottom: 0px;    /* altezza del footer */
 }
 
 /* --- Lightbox overlay --- */
@@ -157,12 +157,14 @@ body::before {
 
 /* Gallery items */
 .gallery-item {
-  overflow: hidden;
+  /*overflow: hidden;*/
   border-radius: 12px;
   background: #fff;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
+  overflow: visible;  /* ✅ allow captions below the image */
+  aspect-ratio: 4 / 3;           /* default aspect ratio */
 }
 
 /* Aspect ratio */
@@ -175,9 +177,11 @@ body::before {
 /* Image */
 .gallery-item img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   display: block;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 .gallery-item img {
@@ -194,13 +198,13 @@ body::before {
   background: rgba(255, 255, 255, 0.85);
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   .image-caption {
     font-size: 1.2rem;
     top: 5px;
     right: 10px;
   }
-}
+}*/
 
 header .quote {
   position: absolute;
@@ -477,14 +481,14 @@ hr {
 }
 .navbar-toggle:hover,
 .navbar-toggle:focus {
-  opacity: 0.0;          /* 0.0 = fully transparent, 1.0 = solid */
+  opacity: 0.8;          /* 0.0 = fully transparent, 1.0 = solid */
   transform: scale(1.05); /* tiny visual feedback */
 }
 
 /* Optional: active state when menu is open */
 
 .navbar-toggle.active {
-  opacity: 0.0;
+  opacity: 1.0;
   color: #9fcacf;         /* or any accent color you prefer */
 }
 
@@ -703,7 +707,7 @@ footer {
     font-size: 16px;
     text-align: center;
     padding: 20px 30px 25px 30px;
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 93px;
     display: flex;
