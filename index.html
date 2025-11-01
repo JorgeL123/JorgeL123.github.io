@@ -1,0 +1,239 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorge L. Rodríguez-Monteverde - Physicist</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/335e0c8686.js" crossorigin="anonymous"></script>
+     
+    <meta charset="utf-8">
+    <title>Vertical Timelines</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        caveat: ['Caveat', 'cursive'],
+                    },
+                },
+            },
+        };
+    </script>
+    
+</head>
+<body>
+<!--<div class="background-banner"></div>-->
+<div id="page-container">
+    <div id="content-wrap">
+<header class="banner">
+  <!-- Desktop version -->
+  <div class="fade-in-image d-none d-md-block header-image-container">
+    <img src="images/background-1.jpg" alt="Sea of Fog" class="background-image">
+
+    <div class="profile-info">
+      <div class="fade-in-image">
+        <img src="images/High-Qual-Logo.png" alt="Jorge L. Rodríguez-Monteverde" class="logo">
+      </div>
+    </div>
+
+    <!-- ✨ The quote for large screens -->
+    <div class="quote fade-in-image">
+      <p>“Wanderer above the Sea of Fog”</p>
+      <p>— C. D. Friedrich</p>
+    </div>
+  </div>
+
+  <!-- Mobile version -->
+  <div class="fade-in-image d-block d-md-none">
+    <img src="images/background.jpg" alt="Sea of Fog" class="background-image" style="height: 100px">
+    <div class="profile-info">
+      <div class="fade-in-image">
+        <img src="images/High-Qual-Logo.png" alt="Jorge L. Rodríguez-Monteverde" class="logo" style="height: 80px">
+      </div>
+    </div>
+    <!-- Hide or keep smaller version -->
+    <div class="quote fade-in-image" style="display: none;">
+      <p>“Wanderer above the Sea of Fog”</p>
+      <p>— C. D. Friedrich</p>
+    </div>
+  </div>
+</header>
+    
+    <div class="page-wrap">
+    <!--<div class="banner banner-left"></div>
+    <div class="banner banner-right"></div>-->
+<!--    <nav>-->
+<!--        <ul>-->
+<!--            <li><a href="index.html">Home</a></li>-->
+<!--            <li><a href="news.html">News</a></li>-->
+<!--            <li><a href="projects.html">Projects</a></li>-->
+<!--            <li><a href="talks.html">Talks</a></li>-->
+<!--            <li><a href="publications0.html">Publications</a></li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+    <nav class="navbar">
+        <div class="navbar-header d-block d-md-none">
+            <span class="navbar-toggle" id="js-navbar-toggle">&#9776;</span>
+        </div>
+        <ul class="main-nav" id="js-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <!--<li><a href="outreach.html">Outreach</a></li>-->
+            <!--<li><a href="publications.html">Publications</a></li>-->
+	    <!--<li><a href="teaching.html">Teaching</a></li>-->
+        </ul>
+    </nav>
+
+    <script>document.getElementById('js-navbar-toggle').addEventListener('click', function() {
+        var menu = document.getElementById('js-menu');
+        menu.classList.toggle('show');
+    });</script>
+
+                    
+<main class="flex justify-center bg-white py-0 px-0 md:px-0">
+  <section class="relative w-full max-w-[1600px] bg-white shadow-2xl rounded-2xl p-10 md:p-10 lg:p-15">
+
+    <!-- Top Section: Photo + Info -->
+    <div class="flex flex-col md:flex-row items-center md:items-start md:space-x-10 mb-16">
+      <img src="images/JogeLole.jpg" alt="Jorge L. Rodríguez-Monteverde"
+           class="w-72 h-72 md:w-72 md:h-72 object-cover rounded-full shadow-lg mb-8 md:mb-0">
+      <div>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">Jorge L. Rodríguez-Monteverde</h1>
+        <div class="space-y-2 text-slate-700 text-base">
+          <p><a href="https://www.physik.uni-jena.de/en/64/institute-for-theoretical-physics" class="hover:text-indigo-600"><i class="fa fa-university"></i>&nbsp; Theoretisch-Physikalisches Institut</a></p>
+          <p><a href="https://www.google.com/maps/place/Theoretisch-Physikalisches+Institut/@50.933493,11.5817406,17.99z/data=!3m1!5s0x47a6a898c93b0abb:0xf4414c8bc829a3af!4m14!1m7!3m6!1s0x47a6a8a2043583b1:0xf23cde2af54a84a8!2sFriedrich-Schiller-Universit%C3%A4t+Jena:+Institut+f%C3%BCr+Physikalische+Chemie,+Helmholtzweg,+Jena!8m2!3d50.9337343!4d11.5831374!16s%2Fg%2F11dfgvwfp2!3m5!1s0x47a6a898c856ec8f:0x8743c55fc6edaed!8m2!3d50.9338606!4d11.5807388!16s%2Fg%2F12hs5qtyd?hl=en&entry=ttu&g_ep=EgoyMDI1MTAyOS4yIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="fa fa-map-marker"></i>&nbsp; Fröbelstieg 1</a></p>
+          <p><a href="mailto:jorge.lopezr@estudiante.uam.es"><i class="fa fa-envelope"></i>&nbsp; jorge.lopezr@estudiante.uam.es</a></p>
+          <p><a href="https://www.linkedin.com/in/jorge-l%C3%B3pez-rodr%C3%ADguez-monteverde-a92563333/" target="_blank"><i class="fa-brands fa-linkedin text-sky-600"></i>&nbsp; LinkedIn</a></p>
+          <p><a href="https://github.com/JorgeL123" target="_blank"><i class="fa fa-github"></i>&nbsp; GitHub</a></p>
+          <p><a href="https://scholar.google.com/citations?user=Ruka3c0AAAAJ&hl=es&oi=sra" target="_blank"><i class="fa-solid fa-graduation-cap text-indigo-500"></i>&nbsp; Google Scholar</p>
+          <p><a href="https://orcid.org/0009-0000-2965-0726" target="_blank"><i class="fa-brands fa-orcid text-lime-600"></i>&nbsp; ORCID 0009-0000-2965-0726</a></p>
+          <p>
+  <a href="https://inspirehep.net/authors/2865241?ui-citation-summary=true" target="_blank" class="flex items-center space-x-2 hover:text-indigo-600">
+    <img src="images/inspire-hep.jpeg" alt="INSPIRE" class="h-4 w-auto align-middle">
+    <span>INSPIRE-HEP</span>
+</a></p>
+        </div>
+      </div>
+    </div>
+    <!-- Toggle Button -->
+<div class="w-full mb-6">
+<button id="timelineToggle" class="flex items-center px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">
+  My Timeline
+  <svg id="arrow" class="ml-2 w-4 h-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+  </svg>
+</button>
+<!-- Centered Timeline -->
+    <div id="timelineContent" class="relative max-w-5xl mx-auto mb-20">
+  <div class="absolute left-1/2 transform -translate-x-1/2 bg-slate-300" style="width:2px; top:0; bottom:0;"></div>
+      <!-- ITEM 1 -->
+      <div class="mb-12 flex justify-between items-center w-full flex-row-reverse">
+        <div class="w-5/12 text-left pl-8">
+          <h3 class="text-xl font-bold text-slate-900"><a href="https://www.physik.uni-jena.de/en/64/institute-for-theoretical-physics"><u>Friedrich-Schiller-Universität</u></a>, Jena (DE)</h3>
+          <p class="text-slate-600 text-base">Guest Researcher (Erasmus+) working on neutron star stability.</p>
+        </div>
+        <div class="z-10 flex items-center justify-center bg-indigo-600 text-white font-bold rounded-full w-6 h-6 shadow-md"></div>
+        <div class="w-5/12 pr-8 text-right text-slate-700 text-sm font-semibold">Oct 2025 – Present</div>
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="mb-12 flex justify-between items-center w-full flex-row-reverse">
+        <div class="w-5/12 text-left pl-8">
+          <h3 class="text-xl font-bold text-slate-900"><a href="https://www.ift.uam-csic.es/"><u>IFT/UAM-CSIC</u></a>, Madrid (ES)</h3>
+          <p class="text-slate-600 text-base">MSc in Theoretical Physics: Elementary Particles and Cosmology.</p>
+        </div>
+        <div class="z-10 flex items-center justify-center bg-indigo-600 text-white font-bold rounded-full w-6 h-6 shadow-md"></div>
+        <div class="w-5/12 pr-8 text-right text-slate-700 text-sm font-semibold">Sep 2024 – Jul 2025</div>
+      </div>
+
+      <!-- ITEM 3 -->
+      <div class="mb-12 flex justify-between items-center w-full flex-row-reverse">
+        <div class="w-5/12 text-left pl-8">
+          <h3 class="text-xl font-bold text-slate-900"><a href="https://www.su.se/"><u>Stockholms Universitet</u></a>, Stockholm (SE)</h3>
+          <p class="text-slate-600 text-base">Erasmus+ with Civis.</p>
+        </div>
+        <div class="z-10 flex items-center justify-center bg-indigo-600 text-white font-bold rounded-full w-6 h-6 shadow-md"></div>
+        <div class="w-5/12 pr-8 text-right text-slate-700 text-sm font-semibold">Aug 2022 – Jun 2023</div>
+      </div>
+
+      <!-- ITEM 4 -->
+      <div class="mb-12 flex justify-between items-center w-full flex-row-reverse">
+        <div class="w-5/12 text-left pl-8">
+          <h3 class="text-xl font-bold text-slate-900"><a href="https://www.uam.es/uam/inicio"><u>Universidad Autónoma de Madrid</u></a>, Madrid (ES)</h3>
+          <p class="text-slate-600 text-base">BSc in Physics.</p>
+        </div>
+        <div class="z-10 flex items-center justify-center bg-indigo-600 text-white font-bold rounded-full w-6 h-6 shadow-md"></div>
+        <div class="w-5/12 pr-8 text-right text-slate-700 text-sm font-semibold">Sep 2020 – Jun 2024</div>
+      </div>
+
+      <!-- ITEM 5 -->
+      <div class="mb-12 flex justify-between items-center w-full flex-row-reverse">
+        <div class="w-5/12 text-left pl-8">
+          <h3 class="text-xl font-bold text-slate-900">Born in Villanueva del Pardillo, Madrid (ES)</h3>
+        </div>
+        <div class="z-10 flex items-center justify-center bg-indigo-600 text-white font-bold rounded-full w-6 h-6 shadow-md"></div>
+        <div class="w-5/12 pr-8 text-right text-slate-700 text-sm font-semibold">Sep 2002</div>
+      </div>
+    </div>
+
+    <!-- About Me -->
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-semibold text-slate-900 mb-6 border-b-2 border-slate-200 pb-2">About Me</h2>
+      <div class="text-slate-700 leading-relaxed text-base space-y-4">
+        <p>I am Jorge, a physics enthusiast with interests in Gravitation and Cosmology. I also have a keen interest in satellite and space-borne missions, as well as numerical simulations and data analysis.</p>
+        <p>I successfully defended my End-Degree-Project (05/2024) and my Master Thesis (07/2025) in collaboration with the IFT in Madrid, using the Einstein Toolkit to make realistic simulations of black hole binaries, dynamical captures and hyperbolic encounters. These projects led to a published paper and a recently submitted work to the arXiv.</p>
+        <p>After my education in Madrid, I moved to Jena (Germany) as a visitor student to expand my knowledge on Numerical Relativity under the guidance of Professor Sebastiano Bernuzzi.</p>
+        <p>Outside of physics, I enjoy reading fantasy books and playing music on my flute and cello. I love spending time outdoors doing wildlife and landscape photography, kayaking, and running a YouTube channel where I share physics simulations — now with over 4k subscribers and 420k views.</p>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+    </div>
+        <footer>
+	    <div>
+		    <p style="color: blue;">&nbsp Latest update: </p>
+		    <p id="Demo" style="color: blue;"> </p>
+	    </div>
+            <div>
+		<p style="color: blue;">© 2025 Jorge L. Rodríguez-Monteverde</p>
+		<!--<p style="font-family: 'Caveat', cursive; color: blue;">"Wanderer above the Sea of Fog"</p>
+		<p style="font-family: 'Caveat', cursive; color: blue;">- By 	C. D. Friedrich</p>-->
+	    </div>
+    </footer>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="js/jquery.rs.slideshow.js"></script>
+	<script src="js/html-captions-bootstrap.js"></script>
+	<script>
+		let text = document.lastModified;
+		document.getElementById("Demo").innerHTML = text;
+	</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('timelineToggle');
+  const timeline = document.getElementById('timelineContent');
+  const arrow = document.getElementById('arrow');
+
+  toggleBtn.addEventListener('click', () => {
+    timeline.classList.toggle('show'); // use "show" instead of "hidden"
+    arrow.classList.toggle('rotate-180'); // optional arrow animation
+  });
+});
+</script>
+
+</div>
+</body>
+</html>

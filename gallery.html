@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorge L. Rodríguez-Monteverde Physicist</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/335e0c8686.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!--<body style="background-image: images/Hubble-scaled.jpg)">-->
+<div id="page-container">
+    <div id="content-wrap">
+<header class="banner">
+  <!-- Desktop version -->
+  <div class="fade-in-image d-none d-md-block header-image-container">
+    <img src="images/background-1.jpg" alt="Sea of Fog" class="background-image">
+
+    <div class="profile-info">
+      <div class="fade-in-image">
+        <img src="images/High-Qual-Logo.png" alt="Jorge L. Rodríguez-Monteverde" class="logo">
+      </div>
+    </div>
+
+    <!-- ✨ The quote for large screens -->
+    <div class="quote fade-in-image">
+      <p>“Wanderer above the Sea of Fog”</p>
+      <p>— C. D. Friedrich</p>
+    </div>
+  </div>
+
+  <!-- Mobile version -->
+  <div class="fade-in-image d-block d-md-none">
+    <img src="images/background.jpg" alt="Sea of Fog" class="background-image" style="height: 100px">
+    <div class="profile-info">
+      <div class="fade-in-image">
+        <img src="images/High-Qual-Logo.png" alt="Jorge L. Rodríguez-Monteverde" class="logo" style="height: 80px">
+      </div>
+    </div>
+    <!-- Hide or keep smaller version -->
+    <div class="quote fade-in-image" style="display: none;">
+      <p>“Wanderer above the Sea of Fog”</p>
+      <p>— C. D. Friedrich</p>
+    </div>
+  </div>
+</header>
+<!--    <nav>-->
+<!--        <ul>-->
+<!--            <li><a href="index.html">Home</a></li>-->
+<!--            <li><a href="news.html">News</a></li>-->
+<!--            <li><a href="projects.html">Projects</a></li>-->
+<!--            <li><a href="talks.html">Talks</a></li>-->
+<!--            <li><a href="publications0.html">Publications</a></li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+    <nav class="navbar">
+        <div class="navbar-header d-block d-md-none">
+            <span class="navbar-toggle" id="js-navbar-toggle">&#9776;</span>
+        </div>
+        <ul class="main-nav" id="js-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <!--<li><a href="outreach.html">Outreach</a></li>-->
+            <!--<li><a href="publications.html">Publications</a></li>-->
+            <!--<li><a href="teaching.html">Teaching</a></li>-->
+        </ul>
+    </nav>
+
+    <script>document.getElementById('js-navbar-toggle').addEventListener('click', function() {
+        var menu = document.getElementById('js-menu');
+        menu.classList.toggle('show');
+    });</script>
+    
+<main style="width: 100%">
+  <section class="gallery-section" aria-label="Photo gallery">
+    <h4><b>Gallery</b></h4>
+    <hr>
+
+    <div class="gallery-controls">
+      <button id="toggle-orientation" aria-pressed="false">Switch to portrait</button>
+    </div>
+
+    <div id="gallery" class="gallery landscape">
+      <figure class="gallery-item landscape">
+        <img src="images/personal/IMG_0128.JPG" alt="" loading="lazy">
+        <figcaption>Roma (IT) 09/2025</figcaption>
+      </figure>
+
+      <figure class="gallery-item landscape">
+        <img src="images/personal/IMG_0231.JPG" alt="" loading="lazy">
+        <figcaption>Roma (IT) 09/2025</figcaption>
+      </figure>
+
+      <figure class="gallery-item portrait">
+        <img src="images/personal/IMG_0692.JPG" alt="" loading="lazy">
+        <figcaption>San Pietro (VA) 09/2025</figcaption>
+      </figure>
+
+      <figure class="gallery-item landscape">
+        <img src="images/personal/IMG_0925.JPG" alt="" loading="lazy">
+        <figcaption>San Pietro (VA) 09/2025</figcaption>
+      </figure>
+
+      <figure class="gallery-item portrait">
+        <img src="images/personal/IMG_3648.JPG" alt="" loading="lazy">
+        <figcaption>Lyngenfjord (NO) 12/2022</figcaption>
+      </figure>
+
+      <figure class="gallery-item landscape">
+        <img src="images/personal/IMG_6350.jpg" alt="" loading="lazy">
+        <figcaption>Lustrafjord (NO) 05/2023, Credit: C. Esteban</figcaption>
+      </figure>
+      
+      <figure class="gallery-item landscape">
+        <img src="images/personal/IMG_6788.JPG" alt="" loading="lazy">
+        <figcaption>Nærøyfjord (NO) 05/2023</figcaption>
+      </figure>
+      
+      <figure class="gallery-item portrait">
+        <img src="images/personal/IMG_8359.JPG" alt="" loading="lazy">
+        <figcaption>Stockholm (SE) 06/2023</figcaption>
+      </figure>
+      
+      <figure class="gallery-item landscape">
+        <img src="images/personal/jorge.jpg" alt="" loading="lazy">
+        <figcaption>Töre (SE) 01/2023, Credit: A. de la Cámara</figcaption>
+      </figure>
+      
+        <figure class="gallery-item landscape">
+        <img src="images/personal/IMG_8380.JPG" alt="" loading="lazy">
+        <figcaption>Stockholm (SE) 06/2023</figcaption>
+      </figure>
+      
+      <figure class="gallery-item landscape">
+        <img src="images/personal/IMG_4158(2).jpg" alt="" loading="lazy">
+        <figcaption>Stockholm (SE) 02/2023</figcaption>
+      </figure>
+      
+      <figure class="gallery-item portrait">
+        <img src="images/personal/IMG_4954.JPG" alt="" loading="lazy">
+        <figcaption>Skógarfoss (IS) 04/2023</figcaption>
+      </figure>
+      
+      <figure class="gallery-item landscape">
+        <img src="images/personal/IMG_9784.JPG" alt="" loading="lazy">
+        <figcaption>Kvaløysletta (NO) 03/2025</figcaption>
+      </figure>
+      
+            <figure class="gallery-item landscape">
+        <img src="images/personal/IMG_5047.JPG" alt="" loading="lazy">
+        <figcaption>Reynisfjara (IS) 04/2025</figcaption>
+      </figure>
+      
+            <figure class="gallery-item landscape">
+        <img src="images/personal/IMG_7578.JPG" alt="" loading="lazy">
+        <figcaption>Københamn (DK) 06/2025</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+</style>
+
+<!-- Small script to toggle global orientation -->
+<script>
+  (function(){
+    const btn = document.getElementById('toggle-orientation');
+    const gallery = document.getElementById('gallery');
+
+    btn.addEventListener('click', () => {
+      const isPortrait = gallery.classList.toggle('portrait');
+      gallery.classList.toggle('landscape', !isPortrait);
+
+      btn.textContent = isPortrait ? 'Switch to landscape' : 'Switch to portrait';
+      btn.setAttribute('aria-pressed', isPortrait ? 'true' : 'false');
+    });
+  })();
+</script>
+		
+<script>
+  // --- Lightbox logic ---
+  const galleryImages = document.querySelectorAll('.gallery-item img');
+
+  // Create the overlay element
+  const lightbox = document.createElement('figure');
+  lightbox.classList.add('lightbox');
+  lightbox.innerHTML = `
+    <img src="" alt="">
+    <figcaption></figcaption>
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector('img');
+  const lightboxCaption = lightbox.querySelector('figcaption');
+
+  // Open on click
+  galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxCaption.textContent = img.alt || '';
+      lightbox.classList.add('active');
+    });
+  });
+
+  // Close on click or Esc
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+   
+            
+            
+        </section>
+    </main>
+</div>
+        <footer>
+	    <div>
+		    <p style="color: blue;">&nbsp Latest update: </p>
+		    <p id="Demo" style="color: blue;"> </p>
+	    </div>
+            <div>
+		<p style="color: blue;">© 2025 Jorge L. Rodríguez-Monteverde</p>
+		<!--<p style="font-family: 'Caveat', cursive; color: blue;">"Wanderer above the Sea of Fog"</p>
+		<p style="font-family: 'Caveat', cursive; color: blue;">- By 	C. D. Friedrich</p>-->
+	    </div>
+    </footer>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="js/jquery.rs.slideshow.js"></script>
+	<script src="js/html-captions-bootstrap.js"></script>
+	<script>
+		let text = document.lastModified;
+		document.getElementById("Demo").innerHTML = text;
+	</script>
+</div>
+</body>
+</html>
