@@ -284,7 +284,7 @@ body::before {
 
 /* If you mark an item as portrait, use portrait card shape */
 .gallery-item.portrait {
-  aspect-ratio: 3 / 4;            /* taller card for portrait photos */
+  aspect-ratio: 4 / 3;            /* taller card for portrait photos */
 }
 
 /* Image fills card and is cropped (cover). Default centered */
@@ -317,7 +317,7 @@ body::before {
 }
 }
 
-*,
+/**,
 *::before,
 *::after {
   box-sizing: border-box;
