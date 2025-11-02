@@ -283,7 +283,7 @@ main {
   width: 100%;
   height: auto;
   object-fit: contain !important; /* keeps proportions, no cropping */
-  object-position: center bottom !important; /* ✅ show lower part if cropped */
+  object-position: center 115% !important; /* ✅ show lower part if cropped */
   border-radius: 12px 12px 0 0;
   display: block;
 }
