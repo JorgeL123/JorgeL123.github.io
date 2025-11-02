@@ -257,55 +257,64 @@ body::before {
 
   /* ======== GALLERY ======== */
 
-  /* Force the gallery itself to stay inside the body’s width */
   .gallery {
-    display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
-    overflow: hidden;
+    gap: 16px;
+    padding: 0 0.75rem;    /* keep cards from screen edge */
+    justify-items: center;
   }
 
-  .gallery-item {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: visible;
-    box-sizing: border-box;
-  }
-
-.gallery-item img {
-  display: block !important;
-  width: 100% !important;          /* fit the white box width */
-  height: auto !important;         /* let image set its own height naturally */
-  object-fit: scale-down !important; /* ensures no cropping, keeps full image visible */
-  border-radius: 12px 12px 0 0;
-  box-sizing: border-box;
-  margin: 0 auto;
-  max-width: 100%;
-  max-height: none !important;     /* no forced vertical limit */
+  /* Option: slightly taller cards on mobile if you prefer */
+  /* .gallery-item { aspect-ratio: 4 / 2.6; } */
 }
 
-  .gallery-item figcaption {
-    width: 100%;
-    padding: 0.9rem 1.2rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    background: rgba(255, 255, 255, 0.95);
-    color: #333;
-    text-align: left;
-    border-top: 1px solid rgba(0,0,0,0.05);
-    box-sizing: border-box;
-  }
+/* --- gallery card: same fixed card aspect (card fits white area) --- */
+.gallery-item {
+  width: 100%;
+  max-width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;               /* crop image to card */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+  aspect-ratio: 4 / 3;            /* uniform card height */
+}
+
+/* If you mark an item as portrait, use portrait card shape */
+.gallery-item.portrait {
+  aspect-ratio: 3 / 4;            /* taller card for portrait photos */
+}
+
+/* Image fills card and is cropped (cover). Default centered */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;              /* fills the card, crops excess */
+  object-position: center center; /* center by default for landscapes */
+  display: block;
+  border-radius: 12px 12px 0 0;
+  box-sizing: border-box;
+}
+
+/* Portrait images: show the bottom of the image instead of the top */
+.gallery-item.portrait img {
+  object-position: center bottom; /* ensures lower portion visible (so caption below is visible) */
+}
+
+/* Ensure caption sits below and is always visible */
+.gallery-item figcaption {
+  padding: 0.9rem 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  background: rgba(255,255,255,0.98);
+  color: #333;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
 }
 
 *,
