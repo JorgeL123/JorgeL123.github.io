@@ -44,6 +44,30 @@
 document.addEventListener("DOMContentLoaded", () => {
   const themeMeta = document.querySelector('meta[name="theme-color"]');
   const navMeta = document.querySelector('meta[name="msapplication-navbutton-color"]');
+  const appleMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+
+  const colors = ["#9dbabd", "#8abfc3", "#5f8c8e"];
+  let i = 0;
+
+  function applyColor(c) {
+    if (themeMeta) themeMeta.setAttribute("content", c);
+    if (navMeta) navMeta.setAttribute("content", c);
+    if (appleMeta) appleMeta.setAttribute("content", c);
+    // trigger a repaint safely
+    window.matchMedia("(prefers-color-scheme: light)").matches; 
+  }
+
+  applyColor(colors[0]); // initial color
+  setInterval(() => {
+    i = (i + 1) % colors.length;
+    applyColor(colors[i]);
+  }, 6000);
+});
+</script>
+<!--<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const navMeta = document.querySelector('meta[name="msapplication-navbutton-color"]');
   const colors = ["#9dbabd", "#8abfc3", "#5f8c8e"];
   let i = 0;
 
@@ -56,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     i++;
   }, 6000);
 });
-</script>
+</script>-->
     
 </head>
 <body>
