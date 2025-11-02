@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jorge L. Rodríguez-Monteverde - Physicist</title>
     <link rel="stylesheet" href="css/styles.css">
+    
+    <meta name="theme-color" content="#9dbabd">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <title>My Gallery</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Optional: dynamically sync theme color with background -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const metaThemeColor = document.querySelector("meta[name=theme-color]");
+      const colors = ["#9dbabd", "#8abfc3", "#5f8c8e"];
+      let i = 0;
+      setInterval(() => {
+        metaThemeColor.setAttribute("content", colors[i % colors.length]);
+        i++;
+      }, 6000); // changes every 6 seconds
+    });
+  </script>
 </head>
 <body>
 <div id="page-container">
@@ -132,15 +152,13 @@ Throughout this Thesis, I use Numerical Relativity simulations to investigate se
         </section>
     </main>
     </div>
-         <footer>
+    <footer>
 	    <div>
-		    <p style="color: blue;">&nbsp Latest update: </p>
-		    <p id="Demo" style="color: blue;"> </p>
+		    <p id="l" style="color: blue;">&nbsp Latest update: </p>
+		    <p id="demo" style="color: blue;"> </p>
 	    </div>
             <div>
-		<p style="color: blue;">© 2025 Jorge L. Rodríguez-Monteverde</p>
-		<!--<p style="font-family: 'Caveat', cursive; color: blue;">"Wanderer above the Sea of Fog"</p>
-		<p style="font-family: 'Caveat', cursive; color: blue;">- By 	C. D. Friedrich</p>-->
+		<p id="r"style="color: blue;"> © 2025 Jorge L. Rodríguez-Monteverde</p>
 	    </div>
     </footer>
     
@@ -149,7 +167,7 @@ Throughout this Thesis, I use Numerical Relativity simulations to investigate se
 	<script src="js/html-captions-bootstrap.js"></script>
 	<script>
 		let text = document.lastModified;
-		document.getElementById("Demo").innerHTML = text;
+		document.getElementById("demo").innerHTML = text;
 	</script>
 </div>
 </body>

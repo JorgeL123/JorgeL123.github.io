@@ -198,6 +198,29 @@ body::before {
   background: rgba(255, 255, 255, 0.85);
 }
 
+/* --- Gallery Mobile Fix --- */
+@media (max-width: 768px) {
+  main {
+    padding: 10px;               /* less white-space padding */
+    box-sizing: border-box;
+  }
+
+  .gallery {
+    gap: 10px;                   /* smaller gaps */
+  }
+
+  .gallery-item {
+    aspect-ratio: auto;          /* let it resize naturally */
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;         /* ensures image stays inside white box */
+    border-radius: 10px;
+  }
+}
+
 /*@media (max-width: 768px) {
   .image-caption {
     font-size: 1.2rem;
@@ -450,9 +473,9 @@ hr {
 }
 
 .navbar-toggle {
- display: none;
+ display: block;
   font-size: 26px;
-  color: #222; /* dark gray so it’s visible on light gradients */
+  color: black; /* dark gray so it’s visible on light gradients */
   cursor: pointer;
   background: transparent;
   border: none;
@@ -479,17 +502,35 @@ hr {
   from { background-position: 0% 50%; }
   to   { background-position: 100% 50%; }
 }
-.navbar-toggle:hover,
-.navbar-toggle:focus {
-  opacity: 0.8;          /* 0.0 = fully transparent, 1.0 = solid */
-  transform: scale(1.05); /* tiny visual feedback */
+/* hover (desktop + mobile when hovering) */
+.navbar-toggle:hover {
+  color: #5f8c8e;            /* mid gradient tone */
+  transform: scale(1.05);
+  opacity: 0.95;
+  text-shadow: none;         /* optional: remove if you don't like it */
 }
 
-/* Optional: active state when menu is open */
+/* keyboard focus (accessible) */
+.navbar-toggle:focus {
+  outline: 3px solid rgba(95,140,142,0.18);
+  outline-offset: 3px;
+  color: #5f8c8e;
+  transform: scale(1.03);
+  opacity: 1;
+}
 
+/* active state when menu is open (class toggled by JS) */
 .navbar-toggle.active {
-  opacity: 1.0;
-  color: #9fcacf;         /* or any accent color you prefer */
+  color: #9fcacf;            /* lighter minty teal for contrast */
+  background: transparent;   /* explicit and valid */
+  border-radius: 6px;
+  padding: 4px 8px;
+  box-shadow: 0 4px 14px rgba(31,55,56,0.08); /* subtle elevation when active */
+}
+
+/* If some other rule is overwriting color, increase specificity */
+.navbar .navbar-toggle:hover {
+  color: #5f8c8e;
 }
 
 .main-nav {
@@ -639,6 +680,32 @@ main {
     background-color: blue;
     border-radius: 50%;
     border: 2px solid white;
+}
+
+@media (max-width: 768px) {
+  #timelineContent .flex {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  #timelineContent .w-5/12 {
+    width: 90% !important;
+    text-align: left;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Move the vertical bar to the left */
+  #timelineContent > .absolute {
+    left: 20px !important; /* shifts bar from center to left */
+    transform: none !important;
+  }
+
+  /* Align dots with the new bar position */
+  #timelineContent .z-10 {
+    margin: 0.5rem 0;
+  }
 }
 
 .intro_container {
