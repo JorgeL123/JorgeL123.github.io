@@ -278,21 +278,16 @@ main {
   overflow: hidden;
 }
 
-
-/* Image fills box but always shows bottom part */
+/* Responsive images that never overflow and preserve proportions */
 .gallery-item img {
-  position: absolute;
-  bottom: 0;        /* ✅ stick to the bottom of the box */
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
-  height: 100%;
-  object-fit: cover;      /* fill the box */
-  object-position: center bottom; /* keep bottom visible */
+  height: auto;
+  object-fit: contain !important;
   border-radius: 12px 12px 0 0;
+  display: block;
 }
 
-/* Captions stay visible and readable */
+/* Captions stay visible and readable — lifted slightly upward */
 .gallery-item figcaption {
   display: block;
   padding: 0.75rem 1rem;
@@ -300,7 +295,7 @@ main {
   line-height: 1.4;
   background: rgba(255, 255, 255, 0.9);
   color: #333;
-  text-align: left; /* or center if you prefer */
+  text-align: left;
   position: relative;
   top: -10px; /* ✅ move upward without affecting layout flow */
   z-index: 2; /* keep above white background */
