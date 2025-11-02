@@ -283,18 +283,17 @@ body::before {
     box-sizing: border-box;
   }
 
-  .gallery-item img {
-    display: block !important;
-    width: 100% !important;          /* match card width */
-    height: auto !important;         /* preserve proportions */
-    aspect-ratio: attr(width) / attr(height); /* modern browsers use this safely */
-    object-fit: contain !important;  /* ensures entire image fits */
-    max-width: 100% !important;
-    max-height: 80vh !important;     /* don’t exceed screen height */
-    border-radius: 12px 12px 0 0;
-    box-sizing: border-box;
-    margin: 0 auto;
-  }
+.gallery-item img {
+  display: block !important;
+  width: 100% !important;          /* fit the white box width */
+  height: auto !important;         /* let image set its own height naturally */
+  object-fit: scale-down !important; /* ensures no cropping, keeps full image visible */
+  border-radius: 12px 12px 0 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: none !important;     /* no forced vertical limit */
+}
 
   .gallery-item figcaption {
     width: 100%;
