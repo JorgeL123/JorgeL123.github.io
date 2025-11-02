@@ -339,6 +339,21 @@ header .quote {
   text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
+header .qname {
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  text-align: left;
+  font-style: italic;
+  color: orange; /* or a subtle color from your palette */
+  font-size: 2.0rem;
+  line-height: 1.2;
+  opacity: 0;
+  animation: fadeInQuote 2.5s ease-in forwards;
+  animation-delay: 1s; /* fades in slightly after the image */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
 @keyframes fadeInQuote {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -646,7 +661,7 @@ hr {
 }
 
 .main-nav li a:hover {
-    background-color: #faefe1;
+    background-color: #d6c287;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
