@@ -219,15 +219,16 @@ body::before {
     position: relative;
   }
 
-  /* Widen text area and move slightly right */
-  #timelineContent .w-5\/12,
-  #timelineContent .w-5\/8 {
-    width: 100% !important;
-    padding-left: 5rem !important;   /* more space from the line */
-    padding-right: 1rem !important;
-    line-height: 1.8;                /* easier to read */
-    text-align: left;
-  }
+ /* Widen text area and move slightly right */
+ #timelineContent .w-5\/12,
+ #timelineContent .w-5\/8 {
+   width: calc(100% - 3rem) !important; /* gives text block more usable width */
+   margin-left: 3rem !important;        /* visually shifts text right */
+   padding-left: 2rem !important;       /* less internal padding = more space for text */
+   padding-right: 1rem !important;
+   line-height: 1.8;
+   text-align: left;
+ }
 
   /* Align dots vertically centered on the line */
   #timelineContent .z-10 {
@@ -256,40 +257,52 @@ body::before {
 
   /* ======== GALLERY ======== */
 
-  main {
+main {
     padding: 10px;
     box-sizing: border-box;
   }
 
-  /* Single column grid */
+  /* Single column grid inside its container */
   .gallery {
+    display: grid;
     grid-template-columns: 1fr !important;
     gap: 16px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
   }
 
-  /* Each gallery item grows naturally with its image + caption */
+  /* Each gallery item behaves like a card */
   .gallery-item {
-    width: 100%;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     display: flex;
     flex-direction: column;
+    align-items: center;
     overflow: visible !important;
+    width: 100%;
+    max-width: 100%;
   }
 
-  /* Responsive images: width fixed to container, height auto */
+  /* Images: scale inside the white card, never exceed its width */
   .gallery-item img {
     width: 100%;
     height: auto;
-    max-height: 80vh;                /* prevents huge portraits */
+    max-width: 100%;
+    max-height: 80vh;          /* limits vertical stretch for tall images */
     object-fit: contain !important;
     border-radius: 12px 12px 0 0;
     display: block;
     margin: 0 auto;
   }
 
-  /* Captions always visible below */
+  /* For portrait images: allow more height */
+  .gallery-item.portrait img {
+    max-height: 90vh;
+  }
+
+  /* Captions always fully visible and never cut */
   .gallery-item figcaption {
     display: block;
     padding: 0.9rem 1.2rem;
@@ -298,8 +311,9 @@ body::before {
     background: rgba(255, 255, 255, 0.95);
     color: #333;
     text-align: left;
-    overflow: visible !important;
-    word-wrap: break-word;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: visible;
     border-top: 1px solid rgba(0,0,0,0.05);
   }
 }
