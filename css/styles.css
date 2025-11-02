@@ -297,6 +297,9 @@ main {
   background: rgba(255, 255, 255, 0.9);
   color: #333;
   text-align: left; /* or center if you prefer */
+  position: relative;
+  top: -10px; /* ✅ move upward without affecting layout flow */
+  z-index: 2; /* keep above white background */
 }
 }
 
