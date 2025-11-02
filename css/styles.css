@@ -282,8 +282,8 @@ main {
 .gallery-item img {
   width: 100%;
   height: auto;
-  object-fit: contain !important; /* keeps proportions, no cropping */
-  object-position: center 165% !important; /* ✅ show lower part if cropped */
+  object-fit: cover !important;        /* fills box, crops excess */
+  object-position: center bottom !important; /* anchor to bottom */
   border-radius: 12px 12px 0 0;
   display: block;
 }
