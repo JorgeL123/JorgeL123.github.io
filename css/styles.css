@@ -278,14 +278,18 @@ main {
   overflow: hidden;
 }
 
-/* Responsive images that never overflow and preserve proportions */
+
+/* Image fills box but always shows bottom part */
 .gallery-item img {
+  position: absolute;
+  bottom: 0;        /* ✅ stick to the bottom of the box */
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  height: auto;
-  object-fit: cover !important;        /* fills box, crops excess */
-  object-position: center bottom !important; /* anchor to bottom */
+  height: 100%;
+  object-fit: cover;      /* fill the box */
+  object-position: center bottom; /* keep bottom visible */
   border-radius: 12px 12px 0 0;
-  display: block;
 }
 
 /* Captions stay visible and readable */
