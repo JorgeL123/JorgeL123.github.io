@@ -17,17 +17,23 @@
   <link rel="stylesheet" href="styles.css">
 
   <!-- Optional: dynamically sync theme color with background -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const metaThemeColor = document.querySelector("meta[name=theme-color]");
-      const colors = ["#9dbabd", "#8abfc3", "#5f8c8e"];
-      let i = 0;
-      setInterval(() => {
-        metaThemeColor.setAttribute("content", colors[i % colors.length]);
-        i++;
-      }, 6000); // changes every 6 seconds
-    });
-  </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const navMeta = document.querySelector('meta[name="msapplication-navbutton-color"]');
+  const colors = ["#9dbabd", "#8abfc3", "#5f8c8e"];
+  let i = 0;
+
+  setInterval(() => {
+    const c = colors[i % colors.length];
+    if (themeMeta) themeMeta.content = c;
+    if (navMeta) navMeta.content = c;
+    // Workaround: Chrome sometimes needs this line to repaint the UI bars
+    document.querySelector('meta[name="viewport"]').content += ' ';
+    i++;
+  }, 6000);
+});
+</script>
 </head>
 <body>
 <!--<body style="background-image: images/Hubble-scaled.jpg)">-->
