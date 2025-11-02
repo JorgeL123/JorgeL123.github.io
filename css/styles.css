@@ -200,24 +200,47 @@ body::before {
 
 /* --- Gallery Mobile Fix --- */
 @media (max-width: 768px) {
+
+  /* Reduce main padding so the white box fits mobile screens better */
   main {
-    padding: 10px;               /* less white-space padding */
+    padding: 10px;
     box-sizing: border-box;
   }
 
+  /* One column layout on mobile with comfortable spacing */
   .gallery {
-    gap: 10px;                   /* smaller gaps */
+    grid-template-columns: 1fr !important;
+    gap: 20px;
   }
 
+  /* Let gallery items grow naturally with their content */
   .gallery-item {
-    aspect-ratio: auto;          /* let it resize naturally */
+    aspect-ratio: auto !important;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    overflow: hidden;
   }
 
+  /* Responsive images that never overflow and preserve proportions */
   .gallery-item img {
     width: 100%;
     height: auto;
-    object-fit: contain;         /* ensures image stays inside white box */
-    border-radius: 10px;
+    object-fit: contain !important; /* prevents cropping */
+    border-radius: 12px 12px 0 0;
+    display: block;
+  }
+
+  /* Captions stay visible and readable */
+  .gallery-item figcaption {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    text-align: left; /* or center if you prefer */
   }
 }
 
@@ -502,30 +525,21 @@ hr {
   from { background-position: 0% 50%; }
   to   { background-position: 100% 50%; }
 }
-/* hover (desktop + mobile when hovering) */
-.navbar-toggle:hover {
-  color: #5f8c8e;            /* mid gradient tone */
-  transform: scale(1.05);
-  opacity: 0.95;
-  text-shadow: none;         /* optional: remove if you don't like it */
-}
 
-/* keyboard focus (accessible) */
+/* Hover and focus keep it black and opaque */
+.navbar-toggle:hover,
 .navbar-toggle:focus {
-  outline: 3px solid rgba(95,140,142,0.18);
-  outline-offset: 3px;
-  color: #5f8c8e;
-  transform: scale(1.03);
-  opacity: 1;
+  color: #000000;                /* stays black */
+  opacity: 1;                    /* never fade */
+  transform: scale(1.05);        /* subtle press feedback */
 }
 
-/* active state when menu is open (class toggled by JS) */
+/* When active (menu open), keep the same look */
 .navbar-toggle.active {
-  color: #9fcacf;            /* lighter minty teal for contrast */
-  background: transparent;   /* explicit and valid */
-  border-radius: 6px;
-  padding: 4px 8px;
-  box-shadow: 0 4px 14px rgba(31,55,56,0.08); /* subtle elevation when active */
+  color: #000000;                /* still black */
+  background: transparent;
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 /* If some other rule is overwriting color, increase specificity */
@@ -682,25 +696,55 @@ main {
     border: 2px solid white;
 }
 
+/* ===============================
+   TIMELINE MOBILE IMPROVEMENTS
+   =============================== */
 @media (max-width: 768px) {
-  #timelineContent .flex {
-    flex-direction: column !important;
-    align-items: center;
-    text-align: center;
-  }
 
-  #timelineContent .w-5/12 {
-    width: 90% !important;
-    text-align: left;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  /* Move the vertical bar to the left */
+  /* Move the vertical timeline line fully to the left */
   #timelineContent > .absolute {
-    left: 20px !important; /* shifts bar from center to left */
+    left: 1.5rem !important;      /* same as Tailwind's pl-6 */
     transform: none !important;
   }
+
+  /* Stack all timeline entries vertically */
+  #timelineContent .flex {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  /* Make timeline text blocks full width, add spacing */
+  #timelineContent .w-5/12 {
+    width: 100% !important;
+    padding-left: 3rem !important; /* leaves space for dots/line */
+    padding-right: 0 !important;
+    text-align: left;
+    line-height: 1.6; /* slightly more relaxed text */
+  }
+
+  /* Align dots along the timeline line */
+  #timelineContent .z-10 {
+    position: absolute !important;
+    left: 1.5rem !important;       /* same as the vertical line */
+    transform: translateY(-50%);
+    width: 0.75rem !important;     /* keep dots proportional */
+    height: 0.75rem !important;
+  }
+
+  /* Add spacing between timeline entries */
+  #timelineContent .mb-12 {
+    margin-bottom: 2.5rem !important;
+    position: relative;
+  }
+
+  /* Align toggle button to the left too */
+  #timelineToggle {
+    margin-left: 1.5rem !important; /* align with line/dots */
+    display: inline-flex;
+    justify-content: flex-start;
+  }
+}
 
   /* Align dots with the new bar position */
   #timelineContent .z-10 {
