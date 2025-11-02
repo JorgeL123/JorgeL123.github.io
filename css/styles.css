@@ -262,18 +262,17 @@ main {
     box-sizing: border-box;
   }
 
-  /* Single column grid inside its container */
   .gallery {
     display: grid;
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
     gap: 16px;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+    justify-items: center;           /* center the white cards */
   }
 
-  /* Each gallery item behaves like a card */
+  /* White card container */
   .gallery-item {
+    width: 100%;
+    max-width: 100%;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -281,40 +280,38 @@ main {
     flex-direction: column;
     align-items: center;
     overflow: visible !important;
-    width: 100%;
-    max-width: 100%;
+    box-sizing: border-box;
   }
 
-  /* Images: scale inside the white card, never exceed its width */
+  /* Ensure images stay inside their card */
   .gallery-item img {
+    display: block;
     width: 100%;
     height: auto;
     max-width: 100%;
-    max-height: 80vh;          /* limits vertical stretch for tall images */
+    max-height: 85vh;                /* prevents overly tall portraits */
     object-fit: contain !important;
     border-radius: 12px 12px 0 0;
-    display: block;
-    margin: 0 auto;
+    box-sizing: border-box;
   }
 
-  /* For portrait images: allow more height */
+  /* Portraits can take more height */
   .gallery-item.portrait img {
-    max-height: 90vh;
+    max-height: 95vh;
   }
 
-  /* Captions always fully visible and never cut */
+  /* Captions visible and properly attached to image */
   .gallery-item figcaption {
-    display: block;
-    padding: 0.9rem 1.2rem;
+    width: 100%;
+    padding: 1rem;
     font-size: 0.95rem;
     line-height: 1.5;
     background: rgba(255, 255, 255, 0.95);
     color: #333;
     text-align: left;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: visible;
     border-top: 1px solid rgba(0,0,0,0.05);
+    overflow: visible;
+    box-sizing: border-box;
   }
 }
 

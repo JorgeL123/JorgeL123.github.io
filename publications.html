@@ -7,25 +7,30 @@
     <title>Jorge L. Rodríguez-Monteverde - Physicist</title>
     <link rel="stylesheet" href="css/styles.css">
     
-    <meta name="theme-color" content="#9dbabd">
+   <meta name="theme-color" content="#9dbabd">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#4b8c96">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-navbutton-color" content="#9dbabd">
 
-  <title>My Gallery</title>
+  <title>My Publications</title>
 
   <link rel="stylesheet" href="styles.css">
 
   <!-- Optional: dynamically sync theme color with background -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const metaThemeColor = document.querySelector("meta[name=theme-color]");
-      const colors = ["#9dbabd", "#8abfc3", "#5f8c8e"];
-      let i = 0;
-      setInterval(() => {
-        metaThemeColor.setAttribute("content", colors[i % colors.length]);
-        i++;
-      }, 6000); // changes every 6 seconds
-    });
-  </script>
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const metaThemeColor = document.querySelector("meta[name=theme-color]");
+    const metaNavColor = document.querySelector("meta[name=msapplication-navbutton-color]");
+    const colors = ["#9dbabd", "#8abfc3", "#5f8c8e"];
+    let i = 0;
+    setInterval(() => {
+      const newColor = colors[i % colors.length];
+      if (metaThemeColor) metaThemeColor.setAttribute("content", newColor);
+      if (metaNavColor) metaNavColor.setAttribute("content", newColor);
+      i++;
+    }, 6000); // changes every 6 seconds
+  });
+ </script>
 </head>
 <body>
 <div id="page-container">
